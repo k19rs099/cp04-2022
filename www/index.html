@@ -193,7 +193,6 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        alarm();
         active = false;
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間： 0");
@@ -213,6 +212,15 @@
            active=false;
            alarm();
        }
+       if(rest==45){
+           alarm();
+       }
+       if(rest==30){
+           alarm();
+       }
+       if(rest==15){
+           alarm();
+       }
        }
     } 
 
@@ -221,15 +229,15 @@
 <body>
     <canvas id="mycanvas" width="200" height="200">Test</canvas>
 
-    <div id="minuteStr">〇</div>
+    <div id="minuteStr">60秒お待ち</div>
     <div id="secondStr">〇</div>
 
-    <div id="remain">Remaining time</div>
+    <div id="remain">1分タイマー</div>
     <div id="time">Time</div>
     <button id="btnA">スタート</button>  
     <button id="btnB">ストップ</button>  
     <button id="btnC">リセット</button>  
     <input type="number" id="minute" value=0 >
-    <input type="number" id="second" value=30 >
+    <input type="number" id="second" value=60 >
 </body>
 </html>
